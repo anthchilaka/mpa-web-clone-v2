@@ -1,0 +1,2122 @@
+
+> mpa-web-clone-v2@0.1.0 dev
+> next dev --port 3100
+
+▲ Next.js 16.3.5 (Turbopack)
+- Local:         http://localhost:3100
+- Network:       http://172.29.224.1:3100
+✓ Ready in 1297ms
+✓ Running next.config.ts took 130ms
+
+○ Compiling / ...
+ GET / 200 in 7.5s (next.js: 6.7s, application-code: 868ms)
+ GET / 200 in 8.7s (next.js: 7.5s, application-code: 1194ms)
+ GET / 200 in 8.7s (next.js: 7.5s, application-code: 1179ms)
+ GET / 200 in 8.7s (next.js: 7.5s, application-code: 1162ms)
+ GET / 200 in 86ms (next.js: 13ms, application-code: 73ms)
+ GET / 200 in 145ms (next.js: 13ms, application-code: 131ms)
+✓ Compiled in 926ms
+✓ Compiled in 794ms
+✓ Compiled in 834ms
+✓ Compiled in 218ms
+ GET / 200 in 468ms (next.js: 69ms, application-code: 398ms)
+ GET / 200 in 472ms (next.js: 185ms, application-code: 287ms)
+ GET / 200 in 218ms (next.js: 23ms, application-code: 195ms)
+✓ Compiled in 576ms
+ GET / 200 in 324ms (next.js: 64ms, application-code: 260ms)
+ GET / 200 in 317ms (next.js: 123ms, application-code: 194ms)
+ GET / 200 in 100ms (next.js: 19ms, application-code: 81ms)
+✓ Compiled in 415ms
+ GET / 200 in 323ms (next.js: 73ms, application-code: 250ms)
+ GET / 200 in 188ms (next.js: 21ms, application-code: 167ms)
+ GET / 200 in 187ms (next.js: 103ms, application-code: 83ms)
+✓ Compiled in 627ms
+ GET / 200 in 316ms (next.js: 127ms, application-code: 188ms)
+ GET / 200 in 315ms (next.js: 171ms, application-code: 144ms)
+ GET / 200 in 131ms (next.js: 24ms, application-code: 107ms)
+✓ Compiled in 200ms
+ GET / 200 in 305ms (next.js: 53ms, application-code: 252ms)
+ GET / 200 in 349ms (next.js: 131ms, application-code: 218ms)
+ GET / 200 in 136ms (next.js: 22ms, application-code: 114ms)
+✓ Compiled in 274ms
+ GET / 200 in 336ms (next.js: 54ms, application-code: 282ms)
+ GET / 200 in 351ms (next.js: 112ms, application-code: 239ms)
+ GET / 200 in 185ms (next.js: 17ms, application-code: 168ms)
+✓ Compiled in 299ms
+ GET / 200 in 409ms (next.js: 72ms, application-code: 336ms)
+ GET / 200 in 446ms (next.js: 137ms, application-code: 309ms)
+✓ Compiled in 386ms
+ GET / 200 in 784ms (next.js: 454ms, application-code: 330ms)
+ GET / 200 in 267ms (next.js: 39ms, application-code: 228ms)
+ GET / 200 in 269ms (next.js: 86ms, application-code: 183ms)
+ GET / 200 in 269ms (next.js: 113ms, application-code: 156ms)
+✓ Compiled in 479ms
+ GET / 200 in 215ms (next.js: 66ms, application-code: 149ms)
+ GET / 200 in 204ms (next.js: 108ms, application-code: 96ms)
+ GET / 200 in 219ms (next.js: 46ms, application-code: 173ms)
+ GET / 200 in 117ms (next.js: 6ms, application-code: 111ms)
+✓ Compiled in 886ms
+✓ Compiled in 364ms
+ GET / 200 in 566ms (next.js: 120ms, application-code: 446ms)
+ GET / 200 in 549ms (next.js: 226ms, application-code: 322ms)
+ GET / 200 in 301ms (next.js: 18ms, application-code: 283ms)
+ GET / 200 in 296ms (next.js: 80ms, application-code: 216ms)
+ GET / 200 in 86ms (next.js: 5ms, application-code: 81ms)
+⨯ ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  [90m692 |[0m   }
+  [90m693 |[0m   .bg-\[url\(\.\.\.\)\] {
+[31m[1m>[0m [90m694 |[0m     background-image: url(...);
+  [90m    |[0m                       [31m[1m^[0m
+  [90m695 |[0m   }
+  [90m696 |[0m   .bg-contain {
+  [90m697 |[0m     background-size: contain;
+
+
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  [90m692 |[0m   }
+  [90m693 |[0m   .bg-\[url\(\.\.\.\)\] {
+[31m[1m>[0m [90m694 |[0m     background-image: url(...);
+  [90m    |[0m                       [31m[1m^[0m
+  [90m695 |[0m   }
+  [90m696 |[0m   .bg-contain {
+  [90m697 |[0m     background-size: contain;
+
+
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  [90m692 |[0m   }
+  [90m693 |[0m   .bg-\[url\(\.\.\.\)\] {
+[31m[1m>[0m [90m694 |[0m     background-image: url(...);
+  [90m    |[0m                       [31m[1m^[0m
+  [90m695 |[0m   }
+  [90m696 |[0m   .bg-contain {
+  [90m697 |[0m     background-size: contain;
+
+
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  [90m692 |[0m   }
+  [90m693 |[0m   .bg-\[url\(\.\.\.\)\] {
+[31m[1m>[0m [90m694 |[0m     background-image: url(...);
+  [90m    |[0m                       [31m[1m^[0m
+  [90m695 |[0m   }
+  [90m696 |[0m   .bg-contain {
+  [90m697 |[0m     background-size: contain;
+
+
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  [90m692 |[0m   }
+  [90m693 |[0m   .bg-\[url\(\.\.\.\)\] {
+[31m[1m>[0m [90m694 |[0m     background-image: url(...);
+  [90m    |[0m                       [31m[1m^[0m
+  [90m695 |[0m   }
+  [90m696 |[0m   .bg-contain {
+  [90m697 |[0m     background-size: contain;
+
+
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  [90m692 |[0m   }
+  [90m693 |[0m   .bg-\[url\(\.\.\.\)\] {
+[31m[1m>[0m [90m694 |[0m     background-image: url(...);
+  [90m    |[0m                       [31m[1m^[0m
+  [90m695 |[0m   }
+  [90m696 |[0m   .bg-contain {
+  [90m697 |[0m     background-size: contain;
+
+
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  [90m692 |[0m   }
+  [90m693 |[0m   .bg-\[url\(\.\.\.\)\] {
+[31m[1m>[0m [90m694 |[0m     background-image: url(...);
+  [90m    |[0m                       [31m[1m^[0m
+  [90m695 |[0m   }
+  [90m696 |[0m   .bg-contain {
+  [90m697 |[0m     background-size: contain;
+
+
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  [90m692 |[0m   }
+  [90m693 |[0m   .bg-\[url\(\.\.\.\)\] {
+[31m[1m>[0m [90m694 |[0m     background-image: url(...);
+  [90m    |[0m                       [31m[1m^[0m
+  [90m695 |[0m   }
+  [90m696 |[0m   .bg-contain {
+  [90m697 |[0m     background-size: contain;
+
+
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  [90m692 |[0m   }
+  [90m693 |[0m   .bg-\[url\(\.\.\.\)\] {
+[31m[1m>[0m [90m694 |[0m     background-image: url(...);
+  [90m    |[0m                       [31m[1m^[0m
+  [90m695 |[0m   }
+  [90m696 |[0m   .bg-contain {
+  [90m697 |[0m     background-size: contain;
+
+
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  [90m692 |[0m   }
+  [90m693 |[0m   .bg-\[url\(\.\.\.\)\] {
+[31m[1m>[0m [90m694 |[0m     background-image: url(...);
+  [90m    |[0m                       [31m[1m^[0m
+  [90m695 |[0m   }
+  [90m696 |[0m   .bg-contain {
+  [90m697 |[0m     background-size: contain;
+
+
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+✓ Compiled in 230ms
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-contain {
+  697 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-contain {
+  697 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-contain {
+  697 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-contain {
+  697 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-contain {
+  697 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-contain {
+  697 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-contain {
+  697 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-contain {
+  697 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-contain {
+  697 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-contain {
+  697 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-contain {
+  697 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-contain {
+  697 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+⨯ ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  [90m692 |[0m   }
+  [90m693 |[0m   .bg-\[url\(\.\.\.\)\] {
+[31m[1m>[0m [90m694 |[0m     background-image: url(...);
+  [90m    |[0m                       [31m[1m^[0m
+  [90m695 |[0m   }
+  [90m696 |[0m   .bg-contain {
+  [90m697 |[0m     background-size: contain;
+
+
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-contain {
+  697 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-contain {
+  697 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-contain {
+  697 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-contain {
+  697 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+ GET / 500 in 3.0s (next.js: 2.6s, application-code: 368ms)
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-contain {
+  697 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-contain {
+  697 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-contain {
+  697 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-contain {
+  697 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] Uncaught Error: ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-contain {
+  697 |     background-size: contain;
+
+
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (Error: ./src/app/globals.css:694:23)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (Error: (./src/app/globals.css:694:23)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-contain {
+  697 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-contain {
+  697 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-contain {
+  697 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-contain {
+  697 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-contain {
+  697 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-contain {
+  697 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-contain {
+  697 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-contain {
+  697 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-contain {
+  697 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-contain {
+  697 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-contain {
+  697 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-contain {
+  697 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-contain {
+  697 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+⨯ ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  [90m692 |[0m   }
+  [90m693 |[0m   .bg-\[url\(\.\.\.\)\] {
+[31m[1m>[0m [90m694 |[0m     background-image: url(...);
+  [90m    |[0m                       [31m[1m^[0m
+  [90m695 |[0m   }
+  [90m696 |[0m   .bg-\[url\([33mPATH[0m\)\] {
+  [90m697 |[0m     background-image: url([33mPATH[0m);
+
+
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/globals.css:697:23
+Error: Module not found: Can't resolve 'PATH'
+  [90m695 |[0m   }
+  [90m696 |[0m   .bg-\[url\([33mPATH[0m\)\] {
+[31m[1m>[0m [90m697 |[0m     background-image: url([33mPATH[0m);
+  [90m    |[0m                       [31m[1m^[0m
+  [90m698 |[0m   }
+  [90m699 |[0m   .bg-contain {
+  [90m700 |[0m     background-size: contain;
+
+
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  [90m692 |[0m   }
+  [90m693 |[0m   .bg-\[url\(\.\.\.\)\] {
+[31m[1m>[0m [90m694 |[0m     background-image: url(...);
+  [90m    |[0m                       [31m[1m^[0m
+  [90m695 |[0m   }
+  [90m696 |[0m   .bg-\[url\([33mPATH[0m\)\] {
+  [90m697 |[0m     background-image: url([33mPATH[0m);
+
+
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/globals.css:697:23
+Error: Module not found: Can't resolve 'PATH'
+  [90m695 |[0m   }
+  [90m696 |[0m   .bg-\[url\([33mPATH[0m\)\] {
+[31m[1m>[0m [90m697 |[0m     background-image: url([33mPATH[0m);
+  [90m    |[0m                       [31m[1m^[0m
+  [90m698 |[0m   }
+  [90m699 |[0m   .bg-contain {
+  [90m700 |[0m     background-size: contain;
+
+
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  [90m692 |[0m   }
+  [90m693 |[0m   .bg-\[url\(\.\.\.\)\] {
+[31m[1m>[0m [90m694 |[0m     background-image: url(...);
+  [90m    |[0m                       [31m[1m^[0m
+  [90m695 |[0m   }
+  [90m696 |[0m   .bg-\[url\([33mPATH[0m\)\] {
+  [90m697 |[0m     background-image: url([33mPATH[0m);
+
+
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/globals.css:697:23
+Error: Module not found: Can't resolve 'PATH'
+  [90m695 |[0m   }
+  [90m696 |[0m   .bg-\[url\([33mPATH[0m\)\] {
+[31m[1m>[0m [90m697 |[0m     background-image: url([33mPATH[0m);
+  [90m    |[0m                       [31m[1m^[0m
+  [90m698 |[0m   }
+  [90m699 |[0m   .bg-contain {
+  [90m700 |[0m     background-size: contain;
+
+
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  [90m692 |[0m   }
+  [90m693 |[0m   .bg-\[url\(\.\.\.\)\] {
+[31m[1m>[0m [90m694 |[0m     background-image: url(...);
+  [90m    |[0m                       [31m[1m^[0m
+  [90m695 |[0m   }
+  [90m696 |[0m   .bg-\[url\([33mPATH[0m\)\] {
+  [90m697 |[0m     background-image: url([33mPATH[0m);
+
+
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/globals.css:697:23
+Error: Module not found: Can't resolve 'PATH'
+  [90m695 |[0m   }
+  [90m696 |[0m   .bg-\[url\([33mPATH[0m\)\] {
+[31m[1m>[0m [90m697 |[0m     background-image: url([33mPATH[0m);
+  [90m    |[0m                       [31m[1m^[0m
+  [90m698 |[0m   }
+  [90m699 |[0m   .bg-contain {
+  [90m700 |[0m     background-size: contain;
+
+
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  [90m692 |[0m   }
+  [90m693 |[0m   .bg-\[url\(\.\.\.\)\] {
+[31m[1m>[0m [90m694 |[0m     background-image: url(...);
+  [90m    |[0m                       [31m[1m^[0m
+  [90m695 |[0m   }
+  [90m696 |[0m   .bg-\[url\([33mPATH[0m\)\] {
+  [90m697 |[0m     background-image: url([33mPATH[0m);
+
+
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/globals.css:697:23
+Error: Module not found: Can't resolve 'PATH'
+  [90m695 |[0m   }
+  [90m696 |[0m   .bg-\[url\([33mPATH[0m\)\] {
+[31m[1m>[0m [90m697 |[0m     background-image: url([33mPATH[0m);
+  [90m    |[0m                       [31m[1m^[0m
+  [90m698 |[0m   }
+  [90m699 |[0m   .bg-contain {
+  [90m700 |[0m     background-size: contain;
+
+
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  [90m692 |[0m   }
+  [90m693 |[0m   .bg-\[url\(\.\.\.\)\] {
+[31m[1m>[0m [90m694 |[0m     background-image: url(...);
+  [90m    |[0m                       [31m[1m^[0m
+  [90m695 |[0m   }
+  [90m696 |[0m   .bg-\[url\([33mPATH[0m\)\] {
+  [90m697 |[0m     background-image: url([33mPATH[0m);
+
+
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/globals.css:697:23
+Error: Module not found: Can't resolve 'PATH'
+  [90m695 |[0m   }
+  [90m696 |[0m   .bg-\[url\([33mPATH[0m\)\] {
+[31m[1m>[0m [90m697 |[0m     background-image: url([33mPATH[0m);
+  [90m    |[0m                       [31m[1m^[0m
+  [90m698 |[0m   }
+  [90m699 |[0m   .bg-contain {
+  [90m700 |[0m     background-size: contain;
+
+
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  [90m692 |[0m   }
+  [90m693 |[0m   .bg-\[url\(\.\.\.\)\] {
+[31m[1m>[0m [90m694 |[0m     background-image: url(...);
+  [90m    |[0m                       [31m[1m^[0m
+  [90m695 |[0m   }
+  [90m696 |[0m   .bg-\[url\([33mPATH[0m\)\] {
+  [90m697 |[0m     background-image: url([33mPATH[0m);
+
+
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/globals.css:697:23
+Error: Module not found: Can't resolve 'PATH'
+  [90m695 |[0m   }
+  [90m696 |[0m   .bg-\[url\([33mPATH[0m\)\] {
+[31m[1m>[0m [90m697 |[0m     background-image: url([33mPATH[0m);
+  [90m    |[0m                       [31m[1m^[0m
+  [90m698 |[0m   }
+  [90m699 |[0m   .bg-contain {
+  [90m700 |[0m     background-size: contain;
+
+
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  [90m692 |[0m   }
+  [90m693 |[0m   .bg-\[url\(\.\.\.\)\] {
+[31m[1m>[0m [90m694 |[0m     background-image: url(...);
+  [90m    |[0m                       [31m[1m^[0m
+  [90m695 |[0m   }
+  [90m696 |[0m   .bg-\[url\([33mPATH[0m\)\] {
+  [90m697 |[0m     background-image: url([33mPATH[0m);
+
+
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/globals.css:697:23
+Error: Module not found: Can't resolve 'PATH'
+  [90m695 |[0m   }
+  [90m696 |[0m   .bg-\[url\([33mPATH[0m\)\] {
+[31m[1m>[0m [90m697 |[0m     background-image: url([33mPATH[0m);
+  [90m    |[0m                       [31m[1m^[0m
+  [90m698 |[0m   }
+  [90m699 |[0m   .bg-contain {
+  [90m700 |[0m     background-size: contain;
+
+
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  [90m692 |[0m   }
+  [90m693 |[0m   .bg-\[url\(\.\.\.\)\] {
+[31m[1m>[0m [90m694 |[0m     background-image: url(...);
+  [90m    |[0m                       [31m[1m^[0m
+  [90m695 |[0m   }
+  [90m696 |[0m   .bg-\[url\([33mPATH[0m\)\] {
+  [90m697 |[0m     background-image: url([33mPATH[0m);
+
+
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/globals.css:697:23
+Error: Module not found: Can't resolve 'PATH'
+  [90m695 |[0m   }
+  [90m696 |[0m   .bg-\[url\([33mPATH[0m\)\] {
+[31m[1m>[0m [90m697 |[0m     background-image: url([33mPATH[0m);
+  [90m    |[0m                       [31m[1m^[0m
+  [90m698 |[0m   }
+  [90m699 |[0m   .bg-contain {
+  [90m700 |[0m     background-size: contain;
+
+
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  [90m692 |[0m   }
+  [90m693 |[0m   .bg-\[url\(\.\.\.\)\] {
+[31m[1m>[0m [90m694 |[0m     background-image: url(...);
+  [90m    |[0m                       [31m[1m^[0m
+  [90m695 |[0m   }
+  [90m696 |[0m   .bg-\[url\([33mPATH[0m\)\] {
+  [90m697 |[0m     background-image: url([33mPATH[0m);
+
+
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/globals.css:697:23
+Error: Module not found: Can't resolve 'PATH'
+  [90m695 |[0m   }
+  [90m696 |[0m   .bg-\[url\([33mPATH[0m\)\] {
+[31m[1m>[0m [90m697 |[0m     background-image: url([33mPATH[0m);
+  [90m    |[0m                       [31m[1m^[0m
+  [90m698 |[0m   }
+  [90m699 |[0m   .bg-contain {
+  [90m700 |[0m     background-size: contain;
+
+
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+✓ Compiled in 355ms
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-\[url\(PATH\)\] {
+  697 |     background-image: url(PATH);
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/globals.css:697:23
+Error: Module not found: Can't resolve 'PATH'
+  695 |   }
+  696 |   .bg-\[url\(PATH\)\] {
+> 697 |     background-image: url(PATH);
+      |                       ^
+  698 |   }
+  699 |   .bg-contain {
+  700 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-\[url\(PATH\)\] {
+  697 |     background-image: url(PATH);
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/globals.css:697:23
+Error: Module not found: Can't resolve 'PATH'
+  695 |   }
+  696 |   .bg-\[url\(PATH\)\] {
+> 697 |     background-image: url(PATH);
+      |                       ^
+  698 |   }
+  699 |   .bg-contain {
+  700 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-\[url\(PATH\)\] {
+  697 |     background-image: url(PATH);
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/globals.css:697:23
+Error: Module not found: Can't resolve 'PATH'
+  695 |   }
+  696 |   .bg-\[url\(PATH\)\] {
+> 697 |     background-image: url(PATH);
+      |                       ^
+  698 |   }
+  699 |   .bg-contain {
+  700 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+⨯ ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  [90m692 |[0m   }
+  [90m693 |[0m   .bg-\[url\(\.\.\.\)\] {
+[31m[1m>[0m [90m694 |[0m     background-image: url(...);
+  [90m    |[0m                       [31m[1m^[0m
+  [90m695 |[0m   }
+  [90m696 |[0m   .bg-\[url\([33mPATH[0m\)\] {
+  [90m697 |[0m     background-image: url([33mPATH[0m);
+
+
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+
+./src/app/globals.css:697:23
+Error: Module not found: Can't resolve 'PATH'
+  [90m695 |[0m   }
+  [90m696 |[0m   .bg-\[url\([33mPATH[0m\)\] {
+[31m[1m>[0m [90m697 |[0m     background-image: url([33mPATH[0m);
+  [90m    |[0m                       [31m[1m^[0m
+  [90m698 |[0m   }
+  [90m699 |[0m   .bg-contain {
+  [90m700 |[0m     background-size: contain;
+
+
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ GET / 500 in 60ms (next.js: 26ms, application-code: 34ms)
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-\[url\(PATH\)\] {
+  697 |     background-image: url(PATH);
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/globals.css:697:23
+Error: Module not found: Can't resolve 'PATH'
+  695 |   }
+  696 |   .bg-\[url\(PATH\)\] {
+> 697 |     background-image: url(PATH);
+      |                       ^
+  698 |   }
+  699 |   .bg-contain {
+  700 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-\[url\(PATH\)\] {
+  697 |     background-image: url(PATH);
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/globals.css:697:23
+Error: Module not found: Can't resolve 'PATH'
+  695 |   }
+  696 |   .bg-\[url\(PATH\)\] {
+> 697 |     background-image: url(PATH);
+      |                       ^
+  698 |   }
+  699 |   .bg-contain {
+  700 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] Uncaught Error: ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-\[url\(PATH\)\] {
+  697 |     background-image: url(PATH);
+
+
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (Error: ./src/app/globals.css:694:23)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (Error: (./src/app/globals.css:694:23)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-\[url\(PATH\)\] {
+  697 |     background-image: url(PATH);
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/globals.css:697:23
+Error: Module not found: Can't resolve 'PATH'
+  695 |   }
+  696 |   .bg-\[url\(PATH\)\] {
+> 697 |     background-image: url(PATH);
+      |                       ^
+  698 |   }
+  699 |   .bg-contain {
+  700 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-\[url\(PATH\)\] {
+  697 |     background-image: url(PATH);
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/globals.css:697:23
+Error: Module not found: Can't resolve 'PATH'
+  695 |   }
+  696 |   .bg-\[url\(PATH\)\] {
+> 697 |     background-image: url(PATH);
+      |                       ^
+  698 |   }
+  699 |   .bg-contain {
+  700 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-\[url\(PATH\)\] {
+  697 |     background-image: url(PATH);
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/globals.css:697:23
+Error: Module not found: Can't resolve 'PATH'
+  695 |   }
+  696 |   .bg-\[url\(PATH\)\] {
+> 697 |     background-image: url(PATH);
+      |                       ^
+  698 |   }
+  699 |   .bg-contain {
+  700 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-\[url\(PATH\)\] {
+  697 |     background-image: url(PATH);
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/globals.css:697:23
+Error: Module not found: Can't resolve 'PATH'
+  695 |   }
+  696 |   .bg-\[url\(PATH\)\] {
+> 697 |     background-image: url(PATH);
+      |                       ^
+  698 |   }
+  699 |   .bg-contain {
+  700 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-\[url\(PATH\)\] {
+  697 |     background-image: url(PATH);
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/globals.css:697:23
+Error: Module not found: Can't resolve 'PATH'
+  695 |   }
+  696 |   .bg-\[url\(PATH\)\] {
+> 697 |     background-image: url(PATH);
+      |                       ^
+  698 |   }
+  699 |   .bg-contain {
+  700 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-\[url\(PATH\)\] {
+  697 |     background-image: url(PATH);
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/globals.css:697:23
+Error: Module not found: Can't resolve 'PATH'
+  695 |   }
+  696 |   .bg-\[url\(PATH\)\] {
+> 697 |     background-image: url(PATH);
+      |                       ^
+  698 |   }
+  699 |   .bg-contain {
+  700 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-\[url\(PATH\)\] {
+  697 |     background-image: url(PATH);
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/globals.css:697:23
+Error: Module not found: Can't resolve 'PATH'
+  695 |   }
+  696 |   .bg-\[url\(PATH\)\] {
+> 697 |     background-image: url(PATH);
+      |                       ^
+  698 |   }
+  699 |   .bg-contain {
+  700 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+⨯ The directory at "D:\AI Tools\Claude Code\Outputs\MPA-web-clone-v2\.next" was deleted.
+
+Deleting this directory while Next.js is running can lead to undefined behavior. Restarting the server to recover...
+▲ Next.js 16.3.5 (Turbopack)
+- Local:         http://localhost:3100
+- Network:       http://172.29.224.1:3100
+✓ Ready in 1349ms
+✓ Running next.config.ts took 169ms
+
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-contain {
+  697 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:15940:21)
+    at processMessage (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:16004:21)
+    at WebSocket.handleMessage (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:16384:52) (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:15940:21)
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-contain {
+  697 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:15940:21)
+    at processMessage (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:16004:21)
+    at WebSocket.handleMessage (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:16384:52) (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:15940:21)
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-contain {
+  697 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:15940:21)
+    at processMessage (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:16004:21)
+    at WebSocket.handleMessage (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:16384:52) (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:15940:21)
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-contain {
+  697 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:15940:21)
+    at processMessage (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:16004:21)
+    at WebSocket.handleMessage (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:16384:52) (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:15940:21)
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-contain {
+  697 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:15940:21)
+    at processMessage (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:16004:21)
+    at WebSocket.handleMessage (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:16384:52) (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:15940:21)
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-contain {
+  697 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:15940:21)
+    at processMessage (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:16004:21)
+    at WebSocket.handleMessage (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:16384:52) (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:15940:21)
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-contain {
+  697 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:15940:21)
+    at processMessage (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:16004:21)
+    at WebSocket.handleMessage (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:16384:52) (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:15940:21)
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-contain {
+  697 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:15940:21)
+    at processMessage (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:16004:21)
+    at WebSocket.handleMessage (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:16384:52) (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:15940:21)
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-contain {
+  697 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:15940:21)
+    at processMessage (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:16004:21)
+    at WebSocket.handleMessage (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:16384:52) (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:15940:21)
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-contain {
+  697 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:15940:21)
+    at processMessage (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:16004:21)
+    at WebSocket.handleMessage (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:16384:52) (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:15940:21)
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-contain {
+  697 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:15940:21)
+    at processMessage (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:16004:21)
+    at WebSocket.handleMessage (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:16384:52) (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:15940:21)
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-contain {
+  697 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:15940:21)
+    at processMessage (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:16004:21)
+    at WebSocket.handleMessage (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:16384:52) (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:15940:21)
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-contain {
+  697 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:15940:21)
+    at processMessage (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:16004:21)
+    at WebSocket.handleMessage (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:16384:52) (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:15940:21)
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-contain {
+  697 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:15940:21)
+    at processMessage (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:16004:21)
+    at WebSocket.handleMessage (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:16384:52) (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:15940:21)
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-\[url\(PATH\)\] {
+  697 |     background-image: url(PATH);
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:15940:21)
+    at processMessage (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:16004:21)
+    at WebSocket.handleMessage (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:16384:52) (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:15940:21)
+[browser] ./src/app/globals.css:697:23
+Error: Module not found: Can't resolve 'PATH'
+  695 |   }
+  696 |   .bg-\[url\(PATH\)\] {
+> 697 |     background-image: url(PATH);
+      |                       ^
+  698 |   }
+  699 |   .bg-contain {
+  700 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:15940:21)
+    at processMessage (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:16004:21)
+    at WebSocket.handleMessage (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:16384:52) (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:15940:21)
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-\[url\(PATH\)\] {
+  697 |     background-image: url(PATH);
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:15940:21)
+    at processMessage (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:16004:21)
+    at WebSocket.handleMessage (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:16384:52) (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:15940:21)
+[browser] ./src/app/globals.css:697:23
+Error: Module not found: Can't resolve 'PATH'
+  695 |   }
+  696 |   .bg-\[url\(PATH\)\] {
+> 697 |     background-image: url(PATH);
+      |                       ^
+  698 |   }
+  699 |   .bg-contain {
+  700 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:15940:21)
+    at processMessage (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:16004:21)
+    at WebSocket.handleMessage (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:16384:52) (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:15940:21)
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-\[url\(PATH\)\] {
+  697 |     background-image: url(PATH);
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:15940:21)
+    at processMessage (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:16004:21)
+    at WebSocket.handleMessage (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:16384:52) (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:15940:21)
+[browser] ./src/app/globals.css:697:23
+Error: Module not found: Can't resolve 'PATH'
+  695 |   }
+  696 |   .bg-\[url\(PATH\)\] {
+> 697 |     background-image: url(PATH);
+      |                       ^
+  698 |   }
+  699 |   .bg-contain {
+  700 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:15940:21)
+    at processMessage (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:16004:21)
+    at WebSocket.handleMessage (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:16384:52) (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:15940:21)
+[browser] ./src/app/globals.css:694:23
+Error: Module not found: Can't resolve '...'
+  692 |   }
+  693 |   .bg-\[url\(\.\.\.\)\] {
+> 694 |     background-image: url(...);
+      |                       ^
+  695 |   }
+  696 |   .bg-\[url\(PATH\)\] {
+  697 |     background-image: url(PATH);
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:15940:21)
+    at processMessage (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:16004:21)
+    at WebSocket.handleMessage (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:16384:52) (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:15940:21)
+[browser] ./src/app/globals.css:697:23
+Error: Module not found: Can't resolve 'PATH'
+  695 |   }
+  696 |   .bg-\[url\(PATH\)\] {
+> 697 |     background-image: url(PATH);
+      |                       ^
+  698 |   }
+  699 |   .bg-contain {
+  700 |     background-size: contain;
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:15940:21)
+    at processMessage (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:16004:21)
+    at WebSocket.handleMessage (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:16384:52) (file://D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.next/dev/static/chunks/node_modules_next_dist_client_0_90u2t._.js:15940:21)
+○ Compiling / ...
+ GET / 200 in 13.3s (next.js: 12.0s, application-code: 1237ms)
+ GET / 200 in 13.2s (next.js: 12.0s, application-code: 1179ms)
+ GET / 200 in 13.2s (next.js: 12.1s, application-code: 1163ms)
+ GET / 200 in 725ms (next.js: 191ms, application-code: 534ms)
+[?25h

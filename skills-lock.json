@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "skills": {
+    "clone-website": {
+      "source": "yournextstore/yournextstore",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/clone-website/SKILL.md",
+      "computedHash": "f776e89e0af4bc64dbfee5ea60d9e575779191136e4dc091d17ecd97bc42a4b4"
+    },
+    "design-system": {
+      "source": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/design-system/SKILL.md",
+      "computedHash": "a8d1f1cd0f55979a872a2ce9717d3c33df23b0c378738b8d6adb574bfb266c77"
+    }
+  }
+}

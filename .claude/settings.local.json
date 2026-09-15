@@ -1,0 +1,39 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p \"D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.claude/skills/clone-website\")",
+      "Bash(cp \"D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.agents/skills/clone-website/SKILL.md\" \"D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.claude/skills/clone-website/SKILL.md\")",
+      "Bash(agent-browser open *)",
+      "Bash(agent-browser wait *)",
+      "Bash(agent-browser set *)",
+      "Bash(agent-browser eval *)",
+      "Bash(agent-browser screenshot *)",
+      "Bash(mkdir -p \"D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/docs/design-references\" \"D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/docs/research/components\" \"D:/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/scripts\" *)",
+      "Bash(agent-browser scroll *)",
+      "Bash(agent-browser snapshot *)",
+      "Bash(agent-browser hover *)",
+      "Bash(agent-browser click *)",
+      "Bash(grep -rniE \"#[0-9a-f]{3,6}|black|white|\\(rgb|rgba\\)\\\\\\(\" src/app/globals.css src/app/page.tsx src/components/SiteNav.tsx src/components/HeroCarousel.tsx src/components/HomeCta.tsx src/components/SiteFooter.tsx)",
+      "Bash(npm run *)",
+      "Read(//tmp/**)",
+      "Bash(ls -la \"D:\\\\AI Tools\\\\Claude Code\\\\Outputs\\\\sessions\\\\\" 2>&1)",
+      "Bash(cat >> *)",
+      "Bash(ls -la \"/c/Users/Emeka Chilaka/.claude/\" 2>&1 | head -20 *)",
+      "Bash(cp -r \"/d/AI Tools/Claude Code/Outputs/MPA-web-clone-v2/.agents/skills/design-system\" \"/c/Users/Emeka Chilaka/.claude/skills/design-system\")",
+      "Bash(echo \"copy exit: $?\")",
+      "Bash(echo \"diff exit: $?\")",
+      "mcp__claude-in-chrome__tabs_context_mcp",
+      "mcp__claude-in-chrome__list_connected_browsers",
+      "mcp__claude-in-chrome__switch_browser",
+      "mcp__claude-in-chrome__navigate",
+      "mcp__claude-in-chrome__computer",
+      "mcp__claude-in-chrome__tabs_close_mcp",
+      "Bash(file \"--full-page\")",
+      "Bash(powershell -NoProfile -Command \"Get-NetTCPConnection -LocalPort 3100 -State Listen | Select-Object -ExpandProperty OwningProcess\")",
+      "Bash(powershell -NoProfile -Command \"Stop-Process -Id 15056 -Force\")",
+      "Bash(powershell -NoProfile -Command \"Stop-Process -Id 8160 -Force\")",
+      "Bash(npx tsc *)",
+      "Bash(powershell -NoProfile -Command \"Stop-Process -Id 30520 -Force\")"
+    ]
+  }
+}

@@ -1,0 +1,176 @@
+- generic
+  - link "Skip to content" [ref=e1]
+  - banner
+    - link "Mauricio Juba — back to top" [ref=e3]
+      - StaticText "JUBA. "
+      - StaticText "PORTFOLIO/2026"
+    - navigation "Sections" [ref=e4]
+      - link "01/WORK" [ref=e14]
+        - StaticText "01"
+        - StaticText "/"
+        - StaticText "WORK"
+      - link "02/ARTICLES" [ref=e15]
+        - StaticText "02"
+        - StaticText "/"
+        - StaticText "ARTICLES"
+      - link "03/LAB" [ref=e16]
+        - StaticText "03"
+        - StaticText "/"
+        - StaticText "LAB"
+      - link "04/ABOUT" [ref=e17]
+        - StaticText "04"
+        - StaticText "/"
+        - StaticText "ABOUT"
+      - link "05/CONTACT" [ref=e18]
+        - StaticText "05"
+        - StaticText "/"
+        - StaticText "CONTACT"
+    - link "GET IN TOUCH" [ref=e5]
+      - StaticText "GET IN TOUCH"
+  - button "Cycle the site accent colour" [ref=e6]
+    - StaticText "THEME"
+    - StaticText "#C3FFFC"
+  - link "Awwwards Nominee: vote for this site (opens in a new tab)" [ref=e2]
+    - image "Awwwards Nominee"
+  - main
+    - region "Intro" [ref=e7]
+      - generic
+        - paragraph
+          - StaticText "STAFF DESIGN ENGINEER"
+        - paragraph
+          - StaticText "DESIGN SYSTEMS · ENTERPRISE PLATFORMS · AI PRODUCTS"
+        - heading "MAURICIO JUBA." [level=1, ref=e20]
+          - StaticText "MAURICIO"
+          - StaticText "JUBA."
+        - StaticText "10+ YEARS SHIPPING SYSTEMS"
+        - StaticText "BASED IN SÃO PAULO, BRAZIL"
+        - StaticText "OPEN TO GLOBAL RELOCATION"
+    - region "SOME OF THE COMPANIES i'VE WORKED WITH" [ref=e8]
+      - paragraph
+        - StaticText "SOME OF THE COMPANIES I'VE WORKED WITH"
+      - image "IBM"
+      - image "Dell"
+      - image "Audi"
+      - image "Santander"
+      - image "Bradesco"
+      - image "Volkswagen"
+      - image "Claro"
+      - image "Via Varejo"
+    - region "FEATURED WORK" [ref=e9]
+      - StaticText "01"
+      - StaticText "4 PROJECTS"
+      - generic
+        - heading "FEATURED WORK" [level=2, ref=e26]
+          - StaticText "FEATURED WORK"
+        - generic
+          - link "Open CEMIG case study" [ref=e27]
+            - generic
+              - StaticText "Energy Utility"
+              - StaticText "2022"
+              - heading "CEMIG" [level=3, ref=e31]
+                - StaticText "CEMIG"
+              - paragraph
+                - StaticText "From a brand PDF to a scalable design system across 5 channels — while shipping mobile and enabling a growing team"
+              - StaticText "8M+"
+              - StaticText "CUSTOMERS"
+              - StaticText "4.7"
+              - StaticText "APP STORE"
+              - StaticText "78K"
+              - StaticText "APP RATINGS"
+            - generic
+              - image "CEMIG"
+          - link "Open JET case study" [ref=e28]
+            - generic
+              - StaticText "Enterprise Platform"
+              - StaticText "2025"
+              - heading "JET" [level=3, ref=e32]
+                - StaticText "JET"
+              - paragraph
+                - StaticText "Redesigning the case-management workflow used by 60+ teams — inside Salesforce Lightning"
+              - StaticText "60+"
+              - StaticText "TEAMS SERVED"
+              - StaticText "130K"
+              - StaticText "EMPLOYEE ORG"
+              - StaticText "9 mo"
+              - StaticText "PROJECT"
+            - generic
+              - generic
+                - Canvas
+          - link "Open TOKENS case study" [ref=e29]
+            - generic
+              - StaticText "Design System"
+              - StaticText "2026"
+              - heading "TOKENS" [level=3, ref=e33]
+                - StaticText "TOKENS"
+              - paragraph
+                - StaticText "Unblocking a stalled design system by rebuilding token architecture for engineering consumption"
+              - StaticText "4"
+              - StaticText "THEME MODES"
+              - StaticText "ALL"
+              - StaticText "DELL.COM SURFACES"
+              - StaticText "JSON+CSS"
+              - StaticText "DUAL PIPELINE"
+            - generic
+          - link "Open BLIVE case study" [ref=e30]
+            - generic
+              - StaticText "AI Pipeline"
+              - StaticText "2026"
+              - heading "BLIVE" [level=3, ref=e34]
+                - StaticText "BLIVE"
+              - paragraph
+                - StaticText "An agent pipeline that turns WhatsApp briefings into designed web proposals — 27 minutes of handwork down to 1–4, in production"
+              - StaticText "95"
+              - StaticText "PROPOSALS / 2 MO"
+              - StaticText "−90%"
+              - StaticText "TIME PER PROPOSAL"
+              - StaticText "14"
+              - StaticText "BLOCKS ← 130+ DESIGNS"
+            - generic
+              - image "bLive proposal pipeline — mobile-first web proposals"
+          - generic
+    - region "RECENT ARTICLES" [ref=e10]
+      - StaticText "02"
+      - StaticText "6 LIVE"
+      - heading "RECENT ARTICLES" [level=2, ref=e21]
+        - StaticText "RECENT ARTICLES"
+    - region "EXPERIMENT LAB" [ref=e11]
+      - StaticText "03"
+      - StaticText "PROOF OF BUILD"
+      - heading "EXPERIMENT LAB" [level=2, ref=e22]
+        - StaticText "EXPERIMENT LAB"
+    - region "ABOUT ME" [ref=e12]
+      - StaticText "04"
+      - StaticText "CAREER"
+      - heading "ABOUT ME" [level=2, ref=e23]
+        - StaticText "ABOUT ME"
+      - StaticText "10+ Years shipping design systems, enterprise platforms and AI products — as design and as production code."
+      - paragraph
+        - StaticText "LOCATION — SÃO PAULO, BRAZIL 🇧🇷"
+      - paragraph
+        - StaticText "RELOCATION — OPEN, GLOBAL 🌐"
+      - paragraph
+        - StaticText "WORK EXPERIENCE"
+      - list
+      - paragraph
+        - StaticText "STUDY"
+      - list
+      - paragraph
+        - StaticText "CORE FOUNDATIONS"
+      - paragraph
+        - StaticText "CORE COMPETENCIES"
+      - list
+      - paragraph
+        - StaticText "MY TOOLKIT"
+    - region "LET'S TALK" [ref=e13]
+      - sectionfooter
+        - StaticText "05"
+        - StaticText "OPEN TO ROLES"
+        - heading "LET'S TALK" [level=2, ref=e25]
+          - StaticText "LET'S TALK"
+        - paragraph
+          - StaticText "© 2026 MAURICIO JUBA"
+        - button "BACK TO TOP ↑" [ref=e24]
+    - sectionfooter
+      - link "Mauricio Juba — back to top" [ref=e19]
+      - paragraph
+        - StaticText "© 2026 MAURICIO JUBA. ALL RIGHTS RESERVED."

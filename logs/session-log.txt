@@ -1,0 +1,15 @@
+Project-scoped session log — MPA-web-clone-v2
+
+This log starts 2026-09-15, added per a housekeeping sweep finding: this project's history had
+been living only in the shared D:\AI Tools\Claude Code\Outputs\sessions\log.txt, commingled with
+every other active project. That shared log remains the source of truth for everything before this
+date — this file is additive, not a replacement or migration of that history.
+
+Full pre-2026-09-15 history for this project (home page build, design token architecture, the
+design-system skill work, the 8-remaining-pages plan, the production scope change, the SEO/GEO
+plan, the static-export decision): search "MPA-web-clone-v2" in
+D:\AI Tools\Claude Code\Outputs\sessions\log.txt.
+
+See also: build.md (what's shipped), troubleshoot.md (bugs and fixes) — both in this project's root.
+
+---
