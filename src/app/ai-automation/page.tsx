@@ -80,7 +80,7 @@ export default function AiAutomationPage() {
           shown as problem, approach, and outcome.
         </p>
 
-        <div className="mt-16 flex flex-col gap-16">
+        <div className="mt-14 flex flex-col gap-16">
           {CASE_STUDIES.map((c) => (
             <article key={c.title} className="border-t border-black/10 pt-10">
               <div className="flex flex-wrap items-baseline justify-between gap-2">

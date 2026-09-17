@@ -5,6 +5,152 @@ Full narrative context for any entry is in `D:\AI Tools\Claude Code\Outputs\sess
 
 ---
 
+## Live template-request test failed end-to-end across 3 separate bugs — RESOLVED
+
+**Status: resolved 2026-09-17. Full flow confirmed working — real OTP requested, verified, and
+the template-request email sent successfully ("Request sent — you'll hear back at
+anthonychilaka@gmail.com soon." shown live).**
+
+Three genuinely separate bugs stacked on top of each other, each only visible once the previous
+one was fixed and the request got one step further. Summary of the full chain, newest fix last:
+
+**Symptom:** After Functions deployed and App Check/env vars were wired up, submitting the real
+form (`requestOtp`) still failed with a generic "internal" error client-side.
+
+**Investigation, in order:**
+
+1. Added `logger.error` around both Resend `.send()` failure paths (previously silent — the code
+   threw a generic `HttpsError("internal", ...)` without logging the real cause anywhere).
+   Redeployed. Re-tested. Still failed, but now `firebase functions:log` showed the *real* first
+   cause, unrelated to Resend entirely:
+   ```
+   The request was not authenticated. Either allow unauthenticated invocations or set the
+   proper Authorization header. Empty Authorization header value.
+   ```
+   This meant requests were being rejected at the Cloud Run/IAM layer, before ever reaching our
+   function code.
+
+2. **Cause confirmed via Google's own docs:** this GCP org has **Domain Restricted Sharing**
+   active (common default on a real Cloud Identity/Workspace-backed org), which silently blocks
+   the `allUsers` → Cloud Run Invoker IAM grant that Firebase normally makes automatically on
+   deploy. Manually trying "Allow public access" in the Cloud Run console's Security tab also
+   silently reverted on refresh — confirming the org policy was blocking it, not a UI bug.
+
+3. **Fix (applied, working):** installed `gcloud` CLI (wasn't present locally — `firebase-tools`
+   alone doesn't include it), then used the documented DRS workaround — disabling Cloud Run's
+   Invoker IAM check entirely (a separate mechanism from IAM role grants, so it isn't blocked by
+   DRS):
+   ```
+   gcloud run services update requestotp --no-invoker-iam-check --region=europe-west1
+   gcloud run services update verifyotpandsend --no-invoker-iam-check --region=europe-west1
+   ```
+   Confirmed fixed: the next log line showed `"Callable request verification passed"` — requests
+   now reach the function code, which they never did before.
+
+4. **New, narrower error surfaced once past the auth layer** — same root cause family as the
+   earlier Cloud Build permission gap (the default compute service account,
+   `540017973887-compute@developer.gserviceaccount.com`, has zero project-level IAM roles due to
+   the 2024 GCP policy change), just a different missing role this time:
+   ```
+   Error: 7 PERMISSION_DENIED: Missing or insufficient permissions.
+     at Firestore.getAll (...)
+   ```
+   The service account can invoke the function now, but can't read/write Firestore — it never had
+   the Datastore role either.
+
+5. ✅ **Fixed** — granted `540017973887-compute@developer.gserviceaccount.com` the **"Cloud
+   Datastore User"** role (`roles/datastore.user`) via IAM & Admin → Grant Access, same pattern as
+   the Cloud Build fix. This let the function's Firestore cooldown-check read succeed, and the
+   request finally reached the Resend `.send()` call for the first time — which immediately
+   surfaced the real, final bug:
+   ```
+   { message: "API key is invalid", name: "validation_error", statusCode: 400 }
+   ```
+6. ✅ **Fixed — the actual root cause.** The `RESEND_API_KEY` secret's stored value was corrupted,
+   almost certainly from a bad paste into PowerShell's masked `firebase functions:secrets:set`
+   prompt the first time it was set (no visual feedback on a masked field makes a partial/garbled
+   paste invisible until something actually tries to use the key). Fixed by generating a **fresh**
+   Resend API key (deleted the old one, created a new one with identical scope) and setting it via
+   `--data-file` instead of the interactive masked prompt (see takeaway below). Redeployed both
+   functions so they picked up the new secret version. Retested — full flow confirmed working.
+
+**Takeaway 1:** this project's default compute service account needed **three** separate manual
+role grants across this build (Secret Manager access was auto-granted by `firebase deploy`; Cloud
+Build Builder and Datastore User were not) — all stemming from the same one-time 2024 GCP policy
+change removing default Editor access for new projects' compute service accounts. Any *new* GCP
+capability this service account touches going forward should be assumed to need the same manual
+grant, not treated as a fresh mystery each time.
+
+**Takeaway 2 — going forward, never set a Firebase secret via the interactive masked prompt on
+this machine.** PowerShell's masked-input field for `firebase functions:secrets:set <NAME>` gave
+no visual feedback and silently accepted a corrupted paste with no error — the secret was
+"created successfully" while actually holding a broken value, and this wasn't discoverable until
+a real API call downstream failed with a vague error days later. **Always use the file-based
+method instead:**
+```
+# 1. Paste the secret value into Notepad (normal clipboard, not the masked terminal field), save as a .txt file
+# 2. Set it from that file:
+firebase functions:secrets:set SECRET_NAME --data-file "path\to\file.txt"
+# 3. Delete the file immediately after — never leave a plaintext secret file on disk or in a git-tracked folder
+Remove-Item "path\to\file.txt"
+```
+This is slower by one step but actually verifiable — you can confirm the file's contents look
+right before the CLI ever sees them, which the masked prompt gives you no way to do.
+
+---
+
+## First `firebase deploy --only functions` failed: missing Cloud Build permission
+
+**Symptom:** `firebase deploy --only functions` uploaded source and granted Secret Manager access
+successfully, but both `requestOtp` and `verifyOtpAndSend` failed to build with: `Build failed
+with status: FAILURE. Could not build the function due to a missing permission on the build
+service account.`
+
+**Cause:** Confirmed via Google's own troubleshooting docs and Firebase community threads — since
+July 2024, newly-created GCP projects no longer automatically grant the default Compute Engine
+service account (`<project-number>-compute@developer.gserviceaccount.com`) the broad Editor role
+it used to get by default. 2nd-gen Cloud Functions builds run under that service account, so
+without an explicit Cloud Build role it can't build anything. This project's default compute SA
+had **zero** project-level IAM roles at all (confirmed: it didn't even appear in the IAM console's
+principal list until searched by exact email, and "Grant access" had to add it as a brand-new
+principal, not edit an existing one).
+
+**Fix:** IAM & Admin → Grant Access → new principal
+`<project-number>-compute@developer.gserviceaccount.com` → role **"Cloud Build Service Account"**
+(`roles/cloudbuild.builds.builder`). After granting and waiting ~1-2 minutes for propagation,
+redeploy succeeded cleanly.
+
+**Takeaway:** Any brand-new GCP/Firebase project attempting its *first* 2nd-gen Functions deploy
+should expect this exact failure — it's not project-specific misconfiguration, it's the current
+default state of every new project since the policy change. Grant the Cloud Build role
+proactively before the first deploy attempt next time, rather than debugging the failure fresh.
+
+---
+
+## New `firebase` dependency showed "Module not found" despite being installed
+
+**Symptom:** After adding `firebase` to `package.json` and running `npm install`, the dev server
+(already running from earlier in the session) threw `Module not found: Can't resolve
+'firebase/app'` / `'firebase/app-check'` / `'firebase/functions'` on every route touching the new
+`TemplateRequestForm`/`TemplatesInteractive` components — even though `node_modules/firebase`
+was confirmed present on disk.
+
+**Cause:** Same root issue logged earlier in this file for a missing Tailwind class — a
+long-running Turbopack dev server doesn't reliably pick up a `node_modules` change (new package
+added mid-session) without a restart. The server's module resolution graph was built before
+`firebase` existed in `node_modules`.
+
+**Fix:** Killed the stale dev server process (found via `Get-NetTCPConnection -LocalPort 3000`),
+`rm -rf .next`, restarted clean. Resolved immediately — no code change needed, same as the
+Tailwind case.
+
+**Takeaway:** This is now the *second* time a long-running dev server missed a real `node_modules`
+change this build (see the Tailwind entry below). Confirmed pattern: any time a new package is
+added to `package.json` mid-session, restart the dev server (kill + `rm -rf .next`) before
+debugging a "module not found" as if it were a real code problem — it almost never is.
+
+---
+
 ## "More" nav dropdown couldn't be clicked — hover dead zone between trigger and menu
 
 **Symptom:** Anthony reported the "More" dropdown in `SiteNav.tsx` opened on hover but closed again
@@ -143,3 +289,36 @@ property values via the browser tool, not just re-reading the source.
 
 **Takeaway:** Before naming any new token in a Tailwind v4 `@theme inline` block, check the existing
 keys in that same block first — a same-named key later in the block overrides silently.
+
+## GTM Tag Assistant "Could not connect to localhost" on first Preview mode attempt — RESOLVED
+
+**Status: resolved 2026-09-17. Connected successfully on retry from an Incognito window.**
+
+**Symptom:** Running GTM Preview mode (`tagmanager.google.com`, container GTM-MQV493DM) against
+`http://localhost:3000` failed with "Could not connect to localhost" / "A timeout occurred while
+attempting to connect to http://localhost:3000/", "0 Google tags found." The connected site tab
+itself loaded fine and correctly carried the `?gtm_debug=...` query param GTM's own snippet checks
+for, so the page and its GTM script were both working — only Tag Assistant's own debug handshake
+back to the extension/parent window was failing.
+
+**Cause:** Not confirmed with certainty (no browser extension list was audited), but the standard
+GTM guidance for this exact error message explicitly lists "the Google tag is not being blocked,
+e.g. by a browser extension" as one of three causes, and the fix (Incognito, extensions disabled
+by default) worked immediately on the first retry — consistent with an ad blocker or privacy
+extension in the normal Chrome profile silently blocking Tag Assistant's own connection channel,
+separate from blocking the site's actual GTM snippet (which was never blocked, per the direct
+`dataLayer` inspection done via this session's own browser tool beforehand, which showed
+`page_render_mode_set` and `scroll_depth` events reaching `dataLayer` correctly the whole time).
+
+**Fix:** Opened a fresh Incognito window (Ctrl+Shift+N in Chrome, extensions disabled by default
+unless explicitly allowed in Incognito), signed into `tagmanager.google.com` there, retried
+Preview mode -> connected immediately, "Connected!", 2 Google tags found (GTM-MQV493DM,
+G-GFK6117QNY), full event timeline visible (Consent Initialization -> Initialization -> Container
+Loaded -> page_render_mode_set -> DOM Ready -> Window Loaded -> Scroll Depth), `GA4 - Anthony
+Chilaka Portfolio` and `GA4 Event - scroll_depth` both confirmed "Fired 1 time."
+
+**Takeaway:** If GTM Preview mode ever times out again on this or another project, try Incognito
+before assuming a real site/GTM misconfiguration — the site's own GTM snippet can be working
+perfectly (confirmed independently via direct `dataLayer` inspection) while Tag Assistant's own
+debug connection is blocked by something in the browser profile running Preview mode, not by
+anything on the site itself.

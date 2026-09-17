@@ -5,7 +5,7 @@ export default function HomeCta() {
         Ready to put your data to work?
       </h2>
       <p className="mx-auto mt-4 max-w-xl text-base text-black/60">
-        Business analytics, BI training, and AI automation consulting for teams across Nigeria and EMEA.
+        Business analytics, BI training, and AI automation consulting for teams across Nigeria, the USA, and EMEA.
       </p>
       <a
         href="https://cal.com/anthonychukwuemekachilaka/30min"

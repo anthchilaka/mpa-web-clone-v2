@@ -12,7 +12,7 @@ const SERVICES = [
   {
     title: "Business Analytics",
     body: "Click the thumbnail above for a 1-on-1 session. Gain actionable insights from your complex data to guide your critical corporate strategies.",
-    href: "https://cal.com/anthonychilaka",
+    href: "https://cal.com/anthonychukwuemekachilaka/30min",
   },
   {
     title: "BI Training",
@@ -22,7 +22,7 @@ const SERVICES = [
   {
     title: "Corporate Sourcing",
     body: "Click above image for expert corporate sourcing. We bridge the gap between borders to ensure your brand items are delivered reliably and on-brand, every time.",
-    href: "https://cal.com/anthonychilaka",
+    href: "https://cal.com/anthonychukwuemekachilaka/30min",
   },
   {
     title: "Website Development",
@@ -48,6 +48,7 @@ const AREAS = [
   "Jos",
   "Owerri",
   "Awka",
+  "USA",
 ];
 
 export default function ServicesPage() {

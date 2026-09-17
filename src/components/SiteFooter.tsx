@@ -10,6 +10,8 @@ const NAV_LINKS = [
   { label: "WebSite Template", href: "/templates" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
+  { label: "FAQ", href: "/faq" },
+  { label: "Terms & Conditions", href: "/terms" },
 ];
 
 const AREAS_SERVED = [
@@ -24,6 +26,7 @@ const AREAS_SERVED = [
   "Jos",
   "Owerri",
   "Awka",
+  "USA",
 ];
 
 const ACCENT = "var(--color-brand-accent)";
@@ -73,11 +76,11 @@ export default function SiteFooter() {
       <div className="mx-auto max-w-7xl px-6 py-16 sm:px-10 lg:px-[7.5%]">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
           <div>
-            <a href="/" aria-label="Home">
+            <a href="https://github.com/anthchilaka" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
               <img src="/images/logo.webp" alt="Anthony Chilaka monogram" className="h-10 w-auto" />
             </a>
             <p className="mt-4 max-w-xs text-sm text-white/60">
-              Business Analyst and AI Automation Consultant, serving clients across Nigeria and EMEA.
+              Business Analyst and AI Automation Consultant, serving clients across Nigeria, the USA, and EMEA.
             </p>
             <div className="mt-6 flex items-center gap-2">
               {SOCIALS.map((s) => (
@@ -93,15 +96,26 @@ export default function SiteFooter() {
             >
               Navigate
             </h3>
-            <ul className="mt-4 grid grid-cols-2 gap-x-6 gap-y-3 text-sm text-white/80">
-              {NAV_LINKS.map((link) => (
-                <li key={link.label}>
-                  <a href={link.href} className="footer-link transition-colors">
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <div className="mt-4 flex gap-x-6 text-sm text-white/80">
+              <ul className="space-y-3">
+                {NAV_LINKS.filter((_, i) => i % 2 === 0).map((link) => (
+                  <li key={link.label}>
+                    <a href={link.href} className="footer-link transition-colors">
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+              <ul className="space-y-3">
+                {NAV_LINKS.filter((_, i) => i % 2 === 1).map((link) => (
+                  <li key={link.label}>
+                    <a href={link.href} className="footer-link transition-colors">
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           <div>
@@ -109,7 +123,7 @@ export default function SiteFooter() {
               className="text-xs font-semibold uppercase tracking-[0.08em]"
               style={{ color: ACCENT }}
             >
-              Areas I Work With
+              Where My Clients Are Located
             </h3>
             <div className="mt-4 flex flex-wrap gap-2">
               {AREAS_SERVED.map((area) => (
@@ -129,7 +143,17 @@ export default function SiteFooter() {
           className="mt-12 flex flex-col items-center justify-between gap-4 pt-8 text-xs text-white/50 sm:flex-row"
           style={{ borderTop: "1px solid rgba(255,255,255,0.12)" }}
         >
-          <span>© 2026 Anthony Chilaka</span>
+          <span>
+            © 2026{" "}
+            <a
+              href="https://github.com/anthchilaka"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-link transition-colors"
+            >
+              Anthony Chilaka
+            </a>
+          </span>
         </div>
       </div>
     </footer>

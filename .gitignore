@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+# agent switchboard bus (runtime, auto-added)
+.agentbus/
+
+# firebase CLI local deploy cache
+.firebase/

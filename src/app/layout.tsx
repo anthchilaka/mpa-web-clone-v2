@@ -30,6 +30,11 @@ export const metadata: Metadata = {
   title: "Anthony Chilaka | Business Analyst & Power BI Analyst | AI Automation Consultant",
   description:
     "Business Analyst and Power BI Analyst with 15+ years in corporate brand sourcing and design, and 3+ years building AI-driven business automation. Serving clients across Nigeria and EMEA.",
+  icons: {
+    icon: "/images/aboutme-favicon.webp",
+    shortcut: "/images/aboutme-favicon.webp",
+    apple: "/images/aboutme-favicon.webp",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

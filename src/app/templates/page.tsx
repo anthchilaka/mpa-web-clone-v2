@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
+import TemplatesInteractive from "@/components/TemplatesInteractive";
 
 export const metadata: Metadata = {
   title: "Available Templates | Anthony Chilaka",
@@ -72,47 +73,11 @@ export default function TemplatesPage() {
         <h1 className="text-3xl font-bold text-black sm:text-4xl">Available Templates</h1>
         <p className="mt-4 max-w-xl text-base text-black/60">
           Explore WordPress template layouts below to find the perfect foundation for your project,
-          use the button below each template submit your pick.
+          click on the desired thumbnail to submit your pick, or use the button below each template
+          to view it live or get in touch.
         </p>
 
-        <div className="mt-14 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {TEMPLATES.map((t) => (
-            <div key={t.name} className="overflow-hidden rounded-md border border-black/10">
-              <img
-                src={`/images/${t.image}`}
-                alt={`${t.name} preview`}
-                className="aspect-[4/3] w-full object-cover"
-              />
-
-              <div className="p-6">
-                <h2 className="text-base font-semibold text-black">{t.name}</h2>
-
-                {t.name === "Enterprise Solution" ? (
-                  <a
-                    href={t.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group relative mt-4 inline-flex h-10 items-center justify-center overflow-hidden rounded-md px-6 text-sm font-semibold text-white"
-                    style={{ backgroundColor: "var(--cta-bg)" }}
-                  >
-                    <span className="relative z-10">{t.cta}</span>
-                    <span className="pointer-events-none absolute inset-y-0 left-[-60%] w-1/3 -skew-x-12 bg-white/35 transition-transform duration-700 ease-out group-hover:translate-x-[260%]" />
-                  </a>
-                ) : (
-                  <a
-                    href={t.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-4 inline-flex items-center gap-1 text-sm font-semibold"
-                    style={{ color: "var(--color-brand-accent)" }}
-                  >
-                    {t.cta} →
-                  </a>
-                )}
-              </div>
-            </div>
-          ))}
-        </div>
+        <TemplatesInteractive templates={TEMPLATES} />
       </main>
 
       <SiteFooter />

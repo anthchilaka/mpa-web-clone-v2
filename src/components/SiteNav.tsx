@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { Menu, X } from "lucide-react";
 
 const PRIMARY_LINKS = [
   { label: "Home", href: "/" },
@@ -60,13 +61,31 @@ const ACCENT_GLOW = "rgba(var(--color-red-600-rgb), 0.55)";
 
 export default function SiteNav() {
   const [moreOpen, setMoreOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const allLinks = [...PRIMARY_LINKS, ...MORE_LINKS];
+  const moreRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!moreOpen) return;
+    function handleOutside(e: MouseEvent | TouchEvent) {
+      if (moreRef.current && !moreRef.current.contains(e.target as Node)) {
+        setMoreOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleOutside);
+    document.addEventListener("touchstart", handleOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleOutside);
+      document.removeEventListener("touchstart", handleOutside);
+    };
+  }, [moreOpen]);
 
   return (
     <header
       className="relative z-20 flex w-full items-center justify-between px-6 sm:px-10 lg:px-[7.5%]"
       style={{ height: "76px", backgroundColor: "var(--nav-bg)" }}
     >
-      <a href="/" aria-label="Home">
+      <a href="https://github.com/anthchilaka" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
         <img src="/images/logo.webp" alt="Anthony Chilaka monogram" className="h-10 w-auto" />
       </a>
 
@@ -81,15 +100,11 @@ export default function SiteNav() {
           </a>
         ))}
 
-        <div
-          className="relative"
-          onMouseEnter={() => setMoreOpen(true)}
-          onMouseLeave={() => setMoreOpen(false)}
-        >
+        <div className="relative" ref={moreRef} onMouseEnter={() => setMoreOpen(true)}>
           <button
             type="button"
             className="flex items-center gap-1 transition-colors hover:text-[var(--link-hover)]"
-            onClick={() => setMoreOpen((v) => !v)}
+            onClick={() => setMoreOpen(true)}
             aria-expanded={moreOpen}
           >
             More
@@ -126,7 +141,37 @@ export default function SiteNav() {
         {SOCIALS.map((s) => (
           <SocialIcon key={s.label} label={s.label} href={s.href} icon={s.icon} />
         ))}
+
+        <button
+          type="button"
+          className="ml-1 flex h-11 w-11 items-center justify-center text-white md:hidden"
+          onClick={() => setMobileOpen((v) => !v)}
+          aria-expanded={mobileOpen}
+          aria-controls="mobile-nav-menu"
+          aria-label="Toggle navigation menu"
+        >
+          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
       </div>
+
+      {mobileOpen && (
+        <div
+          id="mobile-nav-menu"
+          className="absolute left-0 right-0 top-full flex flex-col gap-1 border-t border-white/10 px-6 py-4 text-sm font-medium text-white md:hidden"
+          style={{ backgroundColor: "var(--nav-bg)" }}
+        >
+          {allLinks.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              className="block rounded-md px-2 py-3 transition-colors hover:bg-white/5 hover:text-[var(--link-hover)]"
+              onClick={() => setMobileOpen(false)}
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
+      )}
     </header>
   );
 }

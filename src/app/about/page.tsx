@@ -27,6 +27,17 @@ const PILLARS = [
   },
 ];
 
+const TOOLS = [
+  { name: "Power BI", icon: "/icons/powerbi.svg" },
+  { name: "Excel", icon: "/icons/excel.svg" },
+  { name: "MySQL", icon: "/icons/mysql.svg" },
+  { name: "Python", icon: "/icons/python.svg" },
+  { name: "Microsoft Fabric", icon: "/icons/microsoftfabric.svg" },
+  { name: "n8n", icon: "/icons/n8n.svg" },
+  { name: "OpenCode", icon: "/icons/opencode.svg" },
+  { name: "Claude Code", icon: "/icons/claude.svg" },
+];
+
 export default function AboutPage() {
   return (
     <div className="flex flex-col bg-white font-[family-name:var(--font-poppins)]">
@@ -56,7 +67,7 @@ export default function AboutPage() {
           Anthony Chilaka | Business Analyst &amp; Power BI Analyst | AI Automation Consultant
         </h1>
 
-        <p className="mt-6 max-w-3xl text-base leading-relaxed text-black/70">
+        <p className="mt-4 max-w-3xl text-base leading-relaxed text-black/70">
           I&apos;m a Business Analyst and Power BI Analyst with 15+ years in corporate brand sourcing
           and design, and a proven track record of 3+ years building AI-driven business automation.
           Across retail, eCommerce, logistics, health and wellness, and fintech, the pattern repeats:
@@ -64,7 +75,7 @@ export default function AboutPage() {
           and automated workflows that close that gap.
         </p>
 
-        <div className="mt-16 grid grid-cols-1 gap-10 md:grid-cols-2">
+        <div className="mt-14 grid grid-cols-1 gap-10 md:grid-cols-2">
           {PILLARS.map((pillar) => (
             <div key={pillar.title}>
               <h2
@@ -77,6 +88,27 @@ export default function AboutPage() {
             </div>
           ))}
         </div>
+
+        <section className="mt-20">
+          <h2 className="text-xl font-bold text-black">Tools I Use</h2>
+          <p className="mt-2 max-w-2xl text-sm text-black/60">
+            The BI, data, and AI automation stack behind the analytics and shipped production tools
+            above: Power BI and Excel for reporting, MySQL and Python for data work, Microsoft Fabric
+            for unified analytics pipelines, and n8n, OpenCode, and Claude Code for building and
+            deploying AI automation.
+          </p>
+          <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-4">
+            {TOOLS.map((tool) => (
+              <div
+                key={tool.name}
+                className="flex flex-col items-center gap-2 rounded-md border border-black/10 px-4 py-5 text-center transition-colors hover:border-[var(--color-brand-accent)]"
+              >
+                <img src={tool.icon} alt={`${tool.name} logo`} className="h-8 w-8 object-contain" />
+                <span className="text-xs font-medium text-black/80">{tool.name}</span>
+              </div>
+            ))}
+          </div>
+        </section>
       </main>
 
       <SiteFooter />

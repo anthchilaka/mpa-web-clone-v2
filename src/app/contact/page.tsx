@@ -26,6 +26,23 @@ const SOCIALS = [
 export default function ContactPage() {
   return (
     <div className="flex flex-col bg-white font-[family-name:var(--font-poppins)]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ContactPage",
+            name: "Contact | Anthony Chilaka",
+            url: "https://www.anthonychilaka.com/contact",
+            mainEntity: {
+              "@type": "Person",
+              name: "Anthony Chilaka",
+              sameAs: SOCIALS.map((s) => s.href),
+            },
+          }),
+        }}
+      />
+
       <SiteNav />
 
       <main className="flex-1 px-6 py-24 text-center sm:px-10 lg:px-[7.5%]">
@@ -36,15 +53,22 @@ export default function ContactPage() {
         </p>
 
         <a
-          href="https://cal.com/anthonychilaka"
+          href="https://cal.com/anthonychukwuemekachilaka/30min"
           target="_blank"
           rel="noopener noreferrer"
-          className="mx-auto mt-10 flex max-w-sm flex-col items-center gap-2 rounded-md border border-black/10 p-8 transition-colors hover:border-[var(--color-brand-accent)]"
+          className="mx-auto mt-10 flex max-w-sm flex-col items-center overflow-hidden rounded-md border border-black/10 transition-colors hover:border-[var(--color-brand-accent)]"
         >
-          <span className="text-lg font-semibold text-black">Schedule 1-on-1</span>
-          <span className="text-sm" style={{ color: "var(--color-brand-accent)" }}>
-            cal.com/anthonychilaka
-          </span>
+          <img
+            src="/images/v2contactme.webp"
+            alt="Book a 1-on-1 discovery call with Anthony Chilaka"
+            className="h-48 w-full object-cover"
+          />
+          <div className="flex flex-col items-center gap-2 p-8">
+            <span className="text-lg font-semibold text-black">Schedule 1-on-1</span>
+            <span className="text-sm" style={{ color: "var(--color-brand-accent)" }}>
+              cal.com/anthonychukwuemekachilaka/30min
+            </span>
+          </div>
         </a>
 
         <div className="mt-12 flex items-center justify-center gap-3">

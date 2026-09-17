@@ -1,0 +1,23 @@
+# Anthony Chilaka
+
+> Business Analyst and Power BI Analyst with 15+ years in corporate brand sourcing and design, and 3+ years building AI-driven business automation, serving clients across Nigeria, the USA, and EMEA.
+
+## Main sections
+
+- [Home](https://www.anthonychilaka.com/): Business Analyst and Power BI Analyst, AI Automation Consultant.
+- [About](https://www.anthonychilaka.com/about): Anthony Chilaka's background across business analytics, AI automation, corporate brand sourcing, and BI training.
+- [Services](https://www.anthonychilaka.com/services): Business Analytics, BI Training, Corporate Sourcing, Website Development, and Monthly Project Walkthroughs.
+- [AI Automation](https://www.anthonychilaka.com/ai-automation): AI-driven automation systems built with Claude, n8n, and self-hosted infrastructure, shown as problem, approach, and outcome.
+- [WebSite Template](https://www.anthonychilaka.com/templates): Business, Finance, Restaurant, Beauty & Fashion, NGO/Services, and Enterprise Solution website template layouts.
+- [Blog](https://www.anthonychilaka.com/blog): Why this site moved from a single-page app to a true multi-page build, and what that means for search and AI crawlers.
+- [Portfolio](https://www.anthonychilaka.com/portfolio): Curated, step-by-step guides for optimizing a business from build to production. Coming soon.
+- [Data Challenge Walkthrough](https://www.anthonychilaka.com/walkthroughs): Step-by-step build guides for analytics data challenges. Coming soon.
+- [Contact](https://www.anthonychilaka.com/contact): Book a discovery call or connect via LinkedIn, Upwork, WhatsApp, or X.
+- [FAQ](https://www.anthonychilaka.com/faq): Common questions on payment, revisions, tools, areas served, and getting started.
+- [Terms & Conditions](https://www.anthonychilaka.com/terms): Terms governing business analytics, BI training, corporate sourcing, website development, AI automation, and project walkthrough engagements.
+
+## Key facts
+
+- Tools: Power BI, Excel, MySQL, Python, Microsoft Fabric, n8n, OpenCode, Claude Code.
+- Areas served: Lagos, Ibadan, Port Harcourt, Kaduna, Abuja, Bauchi, Kano, Plateau, Jos, Owerri, Awka, the USA, and EMEA.
+- Discovery calls are free: https://cal.com/anthonychukwuemekachilaka/30min

@@ -1,0 +1,17 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // otpRequests is written and read only by the Admin SDK inside Cloud
+    // Functions (requestOtp / verifyOtpAndSend) — never directly by a client.
+    match /otpRequests/{docId} {
+      allow read, write: if false;
+    }
+
+    // Default deny for anything else, until a real need for client-readable
+    // data exists.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
