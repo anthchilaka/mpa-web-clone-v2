@@ -5,6 +5,55 @@ Full narrative context for any entry is in `D:\AI Tools\Claude Code\Outputs\sess
 
 ---
 
+## GA4 → BigQuery Export silently dead since 2026-07-06 (billing/trial expiry) — OPEN, blocked on funds
+
+**Status: open, blocked 2026-09-18.** Not caused by this build — discovered while pre-checking
+Phase 8 (24h+ re-baseline).
+
+**Symptom:** The Looker Studio "SPA DataStudio Dashboard" (built on
+`anthony-chilaka-analytics.gold.session_max_scroll_v3`) showed "No data" / "0" on every metric for
+the current period.
+
+**Investigation, in order:**
+1. Data source confirmed as BigQuery (`gold.session_max_scroll_v3`), not a GA4-direct connector —
+   ruled out a Looker Studio connector/auth problem first.
+2. Checked the raw export dataset (`analytics_531524363`, ID matches this GA4 property number)
+   directly in the BigQuery console. Last `events_YYYYMMDD` table is `events_20260706` — nothing
+   has landed since, 2.5 months before this MPA rebuild even started.
+3. Noticed the BigQuery console's own "Sandbox" banner: "Set up billing to upgrade to the full
+   BigQuery experience" / "Your free trial is over."
+
+**Cause:** GA4's BigQuery linking requires an active billing account on the destination GCP
+project. This project's (`anthony-chilaka-analytics`) billing account ("My Billing Account") had
+its free trial end and the account closed, dropping the project into BigQuery Sandbox mode. Export
+stopped silently — no error surfaced anywhere in GA4 or BigQuery, it just stopped writing new
+daily tables. The downstream `gold.session_max_scroll_v3` table (last modified Aug 5, 2026) is
+simply starved of new raw data as a consequence, not independently broken.
+
+**Attempted fix, blocked:** "Reopen billing account" on the closed account fails with "trial has
+ended" — expected, since reopening only resumes a free trial, which Google does not allow once
+ended (confirmed via Google's own free-trial docs: 30-day grace period to upgrade to a **paid**
+account, not reopen the trial). The actual fix is creating/linking a new paid billing account, which
+requires a $50 card-verification authorization hold. Anthony's card on file is a debit card without
+$50 currently available — **blocked until funds are available or a different card is used.**
+
+**Verified before recommending the fix, per the `bigquery-gold` skill's cost-discipline gate:**
+real usage is negligible (1,433 rows, ~1MB total across the raw export tables, queried via
+`__TABLES__` metadata — 0 B processed) — nowhere near BigQuery's free tier (1TB query
+processing + 10GB storage/month), so attaching billing carries no realistic ongoing cost risk once
+the one-time verification hold clears.
+
+**Takeaway:** a GCP free-trial billing account closing doesn't just stop new spend — it silently
+kills any feature that depends on that project having *active* billing (GA4 BigQuery linking, in
+this case), with no alert anywhere in GA4's own UI. Worth checking billing-account status directly
+whenever a BigQuery-fed dashboard goes quiet, not just the dashboard's own connector config.
+
+**Other projects on the same now-closed billing account** (found while diagnosing, not yet
+actioned): LinkedInJobIntel, `lcfa-497611`, Claude YouTube MCP, eCommerce-dtc — all 5 projects lose
+active-billing status together if/when this account is fixed or replaced.
+
+---
+
 ## Live template-request test failed end-to-end across 3 separate bugs — RESOLVED
 
 **Status: resolved 2026-09-17. Full flow confirmed working — real OTP requested, verified, and

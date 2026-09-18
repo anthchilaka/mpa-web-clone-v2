@@ -70,6 +70,20 @@ function FooterSocialIcon({ label, href, icon }: { label: string; href: string; 
   );
 }
 
+function BackToTopButton() {
+  return (
+    <button
+      type="button"
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      className="md:hidden flex w-full items-center justify-center gap-2 rounded-full py-3 text-xs font-semibold uppercase tracking-[0.08em] text-white/80 transition-colors"
+      style={{ border: "1px solid rgba(255,255,255,0.15)" }}
+      aria-label="Back to top"
+    >
+      ↑ Back to top
+    </button>
+  );
+}
+
 export default function SiteFooter() {
   return (
     <footer style={{ backgroundColor: "var(--footer-bg)" }} className="text-white">
@@ -154,6 +168,10 @@ export default function SiteFooter() {
               Anthony Chilaka
             </a>
           </span>
+        </div>
+
+        <div className="mt-6">
+          <BackToTopButton />
         </div>
       </div>
     </footer>

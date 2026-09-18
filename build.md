@@ -1000,3 +1000,103 @@ reCAPTCHA Enterprise domain restriction, not a real bug in the feature itself, a
 Removed `anthonychilakahero1.webp`, `hero2.webp`, `hero3.webp` from `public/hero/` — dead weight
 since the `v2hero1-4.webp` / `mobilehero1-4.webp` swap earlier today, no code references remained
 (confirmed via grep). `npx tsc --noEmit` clean, `npm run build` succeeds. Not yet redeployed.
+
+## Pushed to GitHub, 2026-09-17
+
+Fixed two gitignore gaps before committing: added `.firebase/` (local CLI deploy cache, was never
+ignored) and untracked `.agentbus/.bus-info.json` (was tracked before its ignore rule existed,
+so the rule alone didn't drop it). `eval-results/` deliberately left untracked per Anthony's call.
+
+Commit `0f3a6f9`, "Ship SEO/GEO closeout, mobile-responsive build, and template-request email
+feature" — 60 files changed, pushed to `github.com/anthchilaka/mpa-web-clone-v2` main. Covers
+essentially this entire session's work: FAQ/Terms/robots/sitemap/llms.txt, JSON-LD +
+areaServed/USA fix, Tools I Use section, mobile nav drawer, More-dropdown fix, hero height +
+loading-performance fix, new hero/contact images, Templates touch-hint fix, favicon fix, and the
+full template-request email feature (Functions, Firestore, App Check, Resend). Working tree clean
+after push except for the deliberately-excluded `eval-results/`.
+
+## Phase 8 pre-check — GA4 BigQuery Export investigated, 2026-09-18
+
+Before running Phase 8 (24h+ re-baseline), checked the two open items from the prior session's
+"Open-build recommendation": whether the 24h+ window had closed, and whether GA4 BigQuery Export
+(needed for the SPA-vs-MPA comparison) was ever configured.
+
+**24h+ window — confirmed closed.** Production promotion (2026-09-17) predates the session's last
+commit (`bbe0b69`, 16:52 +0100, docs-only). Current time at check: 2026-09-18, 09:20 +0100 —
+comfortably past 24h from the actual promotion (which was hours earlier than 16:52).
+
+**BigQuery Export — was already configured, contrary to the earlier "never configured" note.**
+Linked Apr 9, 2026 (project `anthony-chilaka-analytics`, daily export, event + user data, 1 of 1
+stream). That earlier note in this file was stale — correcting it here.
+
+**Real problem found: GA4 → BigQuery Export has been silently dead since 2026-07-06.** Checked
+`analytics_531524363` (raw export dataset, ID matches this property's number) directly in the
+BigQuery console — the last `events_YYYYMMDD` table is `events_20260706`. Nothing has landed since,
+2.5 months before this MPA rebuild even started. The downstream `gold.session_max_scroll_v3` table
+(what the Looker Studio "SPA DataStudio Dashboard" reads) was last modified Aug 5, 2026, consistent
+with being starved of new raw data rather than having its own separate bug.
+
+**Root cause: the GCP project's free trial ended and its billing account is closed** (`anthony-chilaka-analytics`
+confirmed running in BigQuery Sandbox mode — "Your free trial is over" banner). GA4's BigQuery
+linking needs an active billing account on the destination project; once the trial closed, exports
+stopped landing. This is an infrastructure/billing gap, unrelated to the MPA rebuild or the
+Sep 17 deploy.
+
+**Traffic volume checked before recommending a fix (`bigquery-gold` skill's cost-discipline gate):**
+queried `` `anthony-chilaka-analytics.analytics_531524363.__TABLES__` `` (metadata only, 0 B
+processed) — 1,433 total rows, ~1MB total storage, `events_20260409` through `events_20260706`.
+Real usage is nowhere near BigQuery's free tier (1TB query processing + 10GB storage/month per
+Google's current pricing docs), so attaching billing carries negligible realistic cost risk.
+
+**Blocked on payment verification, 2026-09-18.** Anthony tried "Reopen billing account" on the
+existing closed account ("My Billing Account", 5 projects linked: LinkedInJobIntel, this project,
+lcfa, Claude YouTube MCP, eCommerce-dtc) — blocked with "trial has ended" (expected: reopening only
+resumes a free trial, which can't be restarted once ended; the actual fix is a new **paid** billing
+account, not reopening the trial one, per Google's own free-trial docs). Attempting that hit a
+second blocker: Google requires a $50 authorization hold to verify the new payment method, and
+Anthony's card on file is a debit card without $50 currently available. **On hold until funds are
+available or a different card can be used.** Nothing in BigQuery/GA4/billing was changed this
+session — investigation only, no destructive or state-changing actions taken.
+
+**Still blocking Phase 8:** cannot get fresh MPA production data into BigQuery until export resumes,
+which needs billing reinstated first. GA4's own UI (non-BigQuery reports) still works independently
+and could serve as a fallback data source for Phase 8 if the billing delay runs long, though it
+lacks the custom `page_render_mode`/scroll-depth dimensions the Gold-layer table provides.
+
+## Portfolio page — first real content shipped, 2026-09-18
+
+While Phase 8 stays blocked on billing, added real content to `/portfolio` (previously a "coming
+soon" placeholder) — Item 1 from the "what else can we do pending billing" list.
+
+- **"Why Firebase" (01):** real first-person narrative — Anthony's actual reasoning for the stack
+  choice (Astra WordPress + Namecheap ≈ $140/yr, Google Meet's 60-minute cap on the free Cal.com
+  booking flow, migration to Squarespace + Google Workspace Starter, then a free-tier search that
+  surfaced Firebase). No prior documentation of this rationale existed anywhere in the repo, early
+  commits, or session log — confirmed via a dedicated search before asking Anthony directly. Copy
+  checked against `writing-style-log.md` (no em-dash, no self-justifying tissue, first-person plain
+  statements) before shipping.
+- **Case study (02):** "Secure Template-Request Flow — Serverless OTP Email Verification," built
+  from real content already in `FIREBASE-WORKFLOW.md`/`build.md`/`troubleshoot.md` — the OTP feature's
+  real architecture, the 3 real infrastructure bugs hit and fixed, confirmed production outcome. Same
+  problem/approach/outcome/stack card format as the AI Automation page's case studies, `ItemList`
+  JSON-LD added to match.
+- **Tracking snippet (03):** existing `pushPageView` preview section relabeled "The Canonical Signal
+  Behind the SPA vs MPA Comparison" (Anthony's chosen caption from a shortlist), folded into the same
+  numbered layout.
+- **Layout:** big editorial numerals (01/02/03, brand-accent red at low opacity, newspaper-style),
+  two-column grid at desktop (`lg:grid-cols-2`) per Anthony's request, single column on mobile.
+- **New: site-wide mobile "↑ Back to top" button**, added once to `SiteFooter.tsx` (`md:hidden`) so
+  it applies to all 13 routes without touching each page. Code verified correct via direct
+  `window.scrollTo()` isolation testing, but smooth-scroll behavior itself couldn't be confirmed by
+  the browser-automation tool (same documented automation limitation as the GTM scroll-depth
+  verification) — Anthony asked to manually tap-test on staging before promotion.
+- **A one-screenshot "4 duplicate footers" scare during testing was a stale-paint capture artifact,
+  not a real bug** — confirmed via direct DOM query (`document.querySelectorAll('footer').length`
+  returned 1), consistent with this project's prior documented instances of the same screenshot-tool
+  glitch.
+- Verified: `npx tsc --noEmit` clean, `npm run build` succeeds (13 routes), desktop + mobile (375px)
+  checked live, no console errors.
+- Deployed to `staging` channel first, Anthony reviewed, then promoted to production
+  (`firebase deploy --only hosting`). Verified live on both `anthonychilaka.com/portfolio` and
+  `anthonychilaka-web.web.app/portfolio` (HTTP 200, today's content confirmed present via direct
+  `curl`, not assumed from a clean deploy log).
