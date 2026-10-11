@@ -66,7 +66,7 @@ export default function BlogPage() {
               that doesn&apos;t run your JS — or times out before it finishes — sees an empty shell.
               The fix isn&apos;t a smarter router. It&apos;s not having a router at all for content
               that should be crawlable on its own: a true multi-page build, one static HTML entry per
-              route, built with Vite&apos;s multi-entry mode.
+              route, built with Next.js&apos;s static export.
             </p>
 
             <h2 className="mt-10 text-xl font-bold text-black">What changed, concretely</h2>

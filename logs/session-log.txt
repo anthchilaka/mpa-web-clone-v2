@@ -13,3 +13,65 @@ D:\AI Tools\Claude Code\Outputs\sessions\log.txt.
 See also: build.md (what's shipped), troubleshoot.md (bugs and fixes) — both in this project's root.
 
 ---
+
+==============================================================================
+SESSION — MPA-web-clone-v2 — 2026-10-07 — Billing restore + GTM page_render_mode wiring
+==============================================================================
+
+BRIEF CORRECTIONS (found by reading build.md/troubleshoot.md)
+- Session brief said GA4 BigQuery Export was "never configured". Wrong: linked 2026-04-09
+  (project anthony-chilaka-analytics, dataset analytics_531524363). It was dead since 2026-07-06
+  (billing/trial expiry). Phase 8 24h window long closed (prod promotion 2026-09-17).
+
+DONE THIS SESSION
+1. Billing: Anthony paid the $50 verification hold; new paid billing account created.
+   Name "BigQuery", ID 016014-A152C6-B44112, Direct, Active, no organisation, Anthony =
+   Billing Account Administrator. (Old closed "My Billing Account" still holds the other 4
+   projects: LinkedInJobIntel, lcfa-497611, Claude YouTube MCP, eCommerce-dtc — not moved.)
+2. Project anthony-chilaka-analytics moved to the new account via Billing > Your projects >
+   Actions > Change billing. BigQuery console no longer shows the Sandbox banner (not proof alone).
+3. Alerts-only budget saved on the new account: monthly, $5, thresholds 50/90/100%, email to
+   billing admins and users only (no Monitoring channel, no Pub/Sub). Spend-cap budget
+   deliberately NOT used (it pauses services; could hit Cloud Functions/OTP).
+   Steps were verified against Google's current budgets docs.
+4. GA4 BigQuery link verified intact: created 2026-04-09, 1 of 1 stream, no events excluded,
+   Daily export for events + users, streaming off.
+5. Historical gap: raw events_* for 2026-07-06 onward cannot be re-exported (Google doc: "Once you
+   export data ... you cannot re-export it"; no official backfill for billing lapse). SPA baseline
+   (events_20260409 to events_20260706) is intact. Optional long shot: Google Analytics support
+   ticket asking for regeneration (NOT yet filed).
+6. GA4 Event data retention was 2 months -> changed to 14 months and saved (not retroactive;
+   data older than ~2 months already aged out of Explorations).
+7. GTM (container GTM-MQV493DM, workspace, NOT yet submitted/published):
+   - Created Data Layer Variable "DLV - page_render_mode" (name page_render_mode, version 2).
+   - Added configuration parameter page_render_mode = {{DLV - page_render_mode}} on the
+     "GA4 - Anthony Chilaka Portfolio" Google Tag (G-GFK6117QNY). Saved only.
+8. GTM Preview against https://anthonychilaka.com (incognito): connected; timeline showed
+   page_render_mode_set at position 4 (after Container Loaded). Variables tab at Initialization
+   (gtm.init): DLV - page_render_mode = undefined.
+
+ROOT CAUSE FOUND (not a GTM bug)
+- Production is running an OLD build. curl of the live HTML shows no early page_render_mode push in
+  <head>; a live chunk (_next/static/chunks/1_jx3k3dzf5w5.js) still contains page_render_mode_set
+  (the old React-effect push, after GTM init). Local src/app/layout.tsx (line ~53) and local
+  out/index.html DO contain dataLayer.push({page_render_mode:'mpa'}) before the gtm-init script.
+  The 2026-09-18 timing fix (troubleshoot.md) was built and logged but never deployed to
+  production.
+- (My browser tool could not open the live site; the check used curl + local grep instead.)
+
+PENDING / NOT DONE
+- Rebuild (tsc --noEmit + npm run build), deploy to staging channel, curl-verify the early push,
+  re-run GTM Preview against staging (DLV should read "mpa" at Initialization), then promote with
+  firebase deploy --only hosting. Awaiting Anthony's go-ahead for rebuild + staging deploy.
+- Submit/publish the GTM version (only after the Preview check passes on a build with the fix).
+- Register page_render_mode and scroll_depth_threshold as GA4 event-scoped custom dimensions.
+- Confirm first new events_YYYYMMDD table lands in analytics_531524363 (expect within ~24h of
+  the billing move; check for events_20261007 / events_20261008) and that it contains the
+  page_render_mode param (only true once the fixed build is live and GTM published).
+- Optional: GA4 support ticket for raw-data regeneration; move the other 4 projects to the new
+  billing account if wanted; GA4 BigQuery check for analytics_367885137 (unknown second dataset).
+- Phase 8 (SPA vs MPA re-baseline) only after enough clean MPA days in BigQuery; cutover date
+  2026-09-17; BigQuery has no MPA data for the gap period.
+- Staging channel (anthonychilaka-web--staging-vhaqufaz.web.app) expires 2026-10-17.
+- Still unchanged from before: portfolio_click trigger structurally dead; FIREBASE production
+  workflow report; Phase B/C items already closed in build.md.

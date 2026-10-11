@@ -1,0 +1,21 @@
+Confirmed inputs from Anthony Chilaka (site owner), 2026-09-17 session:
+- Payment structure: deposit + milestones, size-dependent. Fixed-scope engagements (e.g. WebSite Templates)
+  get a deposit before work begins + balance on delivery. Larger engagements (BI dashboards, AI automation
+  builds) get milestone billing tied to project phases. No specific percentages were given by Anthony -- the
+  draft intentionally avoids inventing deposit/milestone percentages, deferring exact figures to each
+  engagement's own Statement of Work.
+- Revision rounds, confirmed by Anthony directly: 3 rounds for BI dashboards, 3 rounds for WebSite Templates,
+  5 rounds for AI automation builds. BI training and corporate sourcing engagements are NOT covered by a fixed
+  revision count -- they are scoped individually per the draft.
+- Governing law: Anthony explicitly chose "client's jurisdiction, case by case" over the research-recommended
+  "Nigerian law" default -- this is a deliberate, informed choice, not an oversight. Flagged to Anthony as the
+  more client-friendly / less protective-for-Anthony option before he chose it.
+- No specific late-payment fee percentage or termination notice period (days) was confirmed by Anthony, so the
+  draft deliberately uses qualitative language ("pause work on any invoice past due," "reasonable written
+  notice") instead of inventing specific numbers.
+- Services referenced elsewhere on the live site (src/app/services/page.tsx): Business Analytics, BI Training,
+  Corporate Sourcing, Website Development, Monthly Project Walkthroughs (AI Automation is a separate primary
+  nav item, not listed on /services).
+- Site has no registered business/legal entity name distinct from "Anthony Chilaka" anywhere else on the site
+  (About, Contact, Services all refer to him as an individual, not a company) -- the Terms page correctly
+  does not invent a company name.

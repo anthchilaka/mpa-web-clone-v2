@@ -54,6 +54,110 @@ active-billing status together if/when this account is fixed or replaced.
 
 ---
 
+## GA4 custom dimensions never registered, root cause traced to GTM — OPEN, in progress
+
+**Status: open, actively being diagnosed 2026-09-18, with Anthony in GTM directly (incognito, same
+pattern as the earlier Preview-mode session).**
+
+**Symptom:** Attempted to register `page_render_mode` and `scroll_depth_threshold` as GA4 event-scoped
+custom dimensions (Admin > Custom definitions). GA4's own "Event parameter" picker, which only lists
+parameters GA4 has actually recorded receiving, showed neither:
+- Searching `page_render` / `page_` → only standard `page_location`, `page_referrer`, `page_title`,
+  `batch_page_id`. No `page_render_mode`.
+- Searching `scroll` → only `percent_scrolled` (GA4's own built-in enhanced-measurement scroll
+  tracking, unrelated to this project's custom `scroll_depth` event). No `scroll_depth_threshold`.
+
+**Stopped before saving either custom dimension** — creating one bound to a parameter GA4 has never
+seen would be pointless. Closed the dialog, investigated instead.
+
+**Root cause for `page_render_mode`, confirmed via GTM's own Tags list:** no tag exists for the
+`page_render_mode_set` event at all. GTM-MQV493DM's tag list (screenshot confirmed 2026-09-18):
+`GA4 - Anthony Chilaka Portfolio` (base config tag, fires on "Initialization - All Pages"),
+`GA4 Event - book_now_click`, `GA4 Event - linkedin_click`, `GA4 Event - portfolio_click`,
+`GA4 Event - scroll_depth`, `GA4 Event - upwork_click`, `GA4 Event - whatsapp_click`. The earlier
+Phase 6 GTM Preview session (2026-09-17) confirmed `page_render_mode_set` reaches `dataLayer`
+correctly and confirmed the base GA4 config tag fires — but firing the base config tag is not the
+same as that tag actually forwarding `page_render_mode` as an event parameter, and no dedicated
+event tag for `page_render_mode_set` was ever built. This is a real gap, not a parameter-mapping
+typo: the event was never wired to any GTM tag capable of sending it to GA4.
+
+**`scroll_depth_threshold` — root cause found and fixed, 2026-09-18.** The `GA4 Event - scroll_depth`
+tag was firing correctly (confirmed in the earlier Phase 6 Preview session) and its Value field
+(`{{Scroll Depth Threshold}}`) was correct, but its **Event Parameter name** was set to
+`percent_scrolled` instead of `scroll_depth_threshold`. `percent_scrolled` happens to be one of
+GA4's own reserved/standard parameter names (used by GA4's built-in Enhanced Measurement scroll
+tracking, a different event), which is exactly why it appeared in the Custom Dimensions picker
+under a "scroll" search while `scroll_depth_threshold` never did — real scroll-depth values have
+been reaching GA4 the entire time, just mislabeled under GA4's native parameter name instead of a
+distinct custom one. Confirmed via the Looker Studio Gold-layer table already having working
+`reached_25/50/75/90` fields, derived from this same mislabeled `percent_scrolled` data.
+
+**Fixed:** Anthony changed the Event Parameter field from `percent_scrolled` to
+`scroll_depth_threshold` (Value field left untouched), saved, and published as GTM Version 5
+("Update event parameter in 'GA4 Event - scroll_depth' tag"), live 2026-09-18 11:26 AM. Confirmed
+via the version summary screen — 1 tag modified, correctly described. `scroll_depth_threshold` can
+now be registered as a real GA4 custom dimension once new events land under the corrected name.
+
+**Broader context:** Anthony's goal is to use this troubleshooting log plus the `gtm-datalayer` and
+`bigquery-gold` skills as the reference pattern for setting up GA4/GTM properly on a separate
+project, `D:\AI Tools\Claude Code\Outputs\craftbyTAG`, once this project's own GA4/GTM gaps are
+fully understood and fixed.
+
+**Turned into a new global skill, 2026-09-18:** the funnel/drop-off-analysis and SPA-vs-MPA
+comparison methodology (what to tag, how to run the actual Path/Funnel Exploration or BigQuery
+analysis, and the real pitfalls found doing this for the first time) was written up as
+`mpa-funnel-analysis` (`C:\Users\Emeka Chilaka\.claude\skills\mpa-funnel-analysis\SKILL.md`), so
+craftbyTAG's own Claude Code session (or any future MPA build) can load it directly by name. Covers
+the `scroll_depth` mislabeling, the disconnected-trigger finding, and the dataLayer-timing-race
+finding below, generalized with placeholders.
+
+**`page_render_mode` timing race — fixed, 2026-09-18.** Moved the push out of `AnalyticsTracker`'s
+React `useEffect` into a plain synchronous `<script>` in `layout.tsx`'s `<head>`, placed before the
+`gtm-init` script tag. Confirmed live in a real browser: `dataLayer[0]` is `{page_render_mode: "mpa"}`,
+`dataLayer[1]` is GTM's own `gtm.start`/`gtm.js` push — correct order, no race. Removed the
+now-redundant `pushPageView()` function from `analytics.ts` and updated the portfolio page's
+displayed code snippet (`PushPageViewSnippet.tsx`) to match the real implementation, since it was
+showing the old, now-inaccurate function. `tsc --noEmit` clean, `npm run build` succeeds (13
+routes), no console errors. **Still needed before this is useful:** a GTM Data Layer Variable for
+`page_render_mode` and a Field to Set on the base config tag — not yet built, still open.
+
+## `GA4 Event - portfolio_click` tag structurally broken — confirmed, not yet fixed
+
+**Status: open, confirmed root cause 2026-09-18.** While auditing what's tracked vs untracked for
+the funnel-analysis work, checked this tag's trigger directly in GTM: type "Click - All Elements,"
+condition "Click Classes contains portfolio." Searched the entire codebase for any element with a
+CSS class containing the substring "portfolio" — zero matches, anywhere. This trigger can never
+fire on the current site; it isn't a "not clicked yet" gap (the earlier 2026-09-17 Phase 6 session
+assumed this when it saw "Not Fired" in GTM Preview), it's structurally dead — no element the
+trigger could ever match exists in the codebase. Not yet fixed; needs either a real target element
+with a matching class/ID, or the trigger rebuilt against whatever the original intent was (unclear
+what "Portfolio Click" was meant to track — the `/portfolio` nav link is a plain link with no
+special class, structurally identical to every other nav item).
+
+## Real gaps found in what's tracked vs. the site's actual page structure, 2026-09-18
+
+Audited every real route and interactive element against the 7 existing GTM tags
+(`book_now_click`, `whatsapp_click`, `upwork_click`, `linkedin_click`, `portfolio_click`,
+`scroll_depth`, base `page_view`). Confirmed untracked:
+- **Template-request OTP flow** (`/templates`) — started/verified/sent. The richest real
+  conversion funnel on the site, currently invisible to GA4/GTM entirely (only visible in Firebase
+  Functions logs).
+- **"View Template Live" clicks** — 5 external links to websitedemos.net template demos
+  (`/templates`), plus the separate "Contact to Discuss" CTA on the Enterprise card.
+- **GitHub logo/link clicks** — header logo, footer logo, footer copyright name, all site-wide,
+  all pointing to `github.com/anthchilaka` (a deliberate change logged 2026-09-17, replacing the
+  usual "logo links home" convention).
+- **AI Automation case-study repo links** (3, on `/ai-automation`) and the **Portfolio case-study
+  repo link** (`/portfolio`) — whether visitors actually dig into proof-of-work, not just skim.
+- **Confirmed NOT a gap:** FAQ is a static list, not an accordion — no expand/collapse interaction
+  exists to track.
+- **Confirmed real and working:** "Book a discovery call" / booking CTAs exist on 3 pages (Home,
+  Contact, Services x2 template cards), all pointing to the same Cal.com URL — `book_now_click`'s
+  trigger scope (URL-match vs element-match) not yet confirmed, separate from the `portfolio_click`
+  investigation above.
+
+---
+
 ## Live template-request test failed end-to-end across 3 separate bugs — RESOLVED
 
 **Status: resolved 2026-09-17. Full flow confirmed working — real OTP requested, verified, and

@@ -163,8 +163,8 @@ export default function PortfolioPage() {
             </h2>
             <p className="mt-3 text-sm text-black/60">
               A real snippet from this site&apos;s own SPA (single-page application) → MPA (multi-page
-              application) migration — the shared helper every page calls to set the canonical
-              render-mode signal.
+              application) migration — the inline script every page loads, before Google Tag
+              Manager itself initializes, to set the canonical render-mode signal.
             </p>
             <PushPageViewSnippet />
           </div>

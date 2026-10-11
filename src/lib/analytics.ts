@@ -1,6 +1,8 @@
 // GTM/GA4 wiring ported from the SPA vs MPA blueprint
 // (D:\AI Tools\Claude Code\Outputs\SPA vs MPA\repo-push-drafts\blueprint.md).
 // page_render_mode is the canonical SPA/MPA signal in BigQuery — never omit it.
+// Pushed via a plain inline script in layout.tsx's <head>, before the GTM
+// container snippet, not from here — see that file for why.
 
 export const GTM_CONTAINER_ID = "GTM-MQV493DM";
 export const GA4_MEASUREMENT_ID = "G-GFK6117QNY";
@@ -9,15 +11,6 @@ declare global {
   interface Window {
     dataLayer: Record<string, unknown>[];
   }
-}
-
-export function pushPageView(): void {
-  if (typeof window === "undefined") return;
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    event: "page_render_mode_set",
-    page_render_mode: "mpa",
-  });
 }
 
 const SCROLL_DEPTH_THRESHOLDS = [25, 50, 75, 90] as const;

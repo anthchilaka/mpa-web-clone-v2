@@ -44,6 +44,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} ${rubik.variable} ${poppins.variable} h-full antialiased`}
     >
       <head>
+        {/* Plain synchronous script, not next/script — must run before GTM
+            initializes so page_render_mode is already in dataLayer when the
+            container reads it, not raced against a post-hydration push. */}
+        <script
+          id="page-render-mode-init"
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer=window.dataLayer||[];window.dataLayer.push({page_render_mode:'mpa'});`,
+          }}
+        />
         <Script id="gtm-init" strategy="afterInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
